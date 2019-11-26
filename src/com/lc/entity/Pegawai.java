@@ -2,8 +2,8 @@ package com.lc.entity;
 
 public class Pegawai {
     private String id;
+    private String nik;
     private String nama;
-    private String username;
     private String password;
     private RolePegawai Role_Pegawai_id;
 
@@ -23,12 +23,12 @@ public class Pegawai {
         this.nama = nama;
     }
 
-    public String getUsername() {
-        return username;
+    public String getNik() {
+        return nik;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setNik(String username) {
+        this.nik = username;
     }
 
     public String getPassword() {
@@ -44,6 +44,6 @@ public class Pegawai {
     }
 
     public void setRole_Pegawai_id(RolePegawai role_Pegawai_id) {
-        Role_Pegawai_id = role_Pegawai_id;
+        this.Role_Pegawai_id = role_Pegawai_id;
     }
 }
