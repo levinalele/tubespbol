@@ -10,7 +10,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="761.0" prefWidth="600.0" style="-fx-background-color: yellow;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lc.controller.PenjagaParkirUmumFormController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="761.0" prefWidth="600.0" styleClass="snowy" stylesheets="@../stylesheets.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lc.controller.PenjagaParkirUmumFormController">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" height="21.0" stroke="BLACK" strokeType="INSIDE" width="600.0">
          <fill>
@@ -42,7 +42,7 @@
          </font>
       </Text>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#222425" height="1.0" stroke="BLACK" strokeType="INSIDE" width="600.0" />
-      <GridPane hgap="15.0" vgap="15.0">
+      <GridPane hgap="15.0" prefHeight="233.0" prefWidth="600.0" vgap="15.0">
         <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="144.0" minWidth="10.0" prefWidth="28.0" />
           <ColumnConstraints hgrow="SOMETIMES" maxWidth="267.0" minWidth="10.0" prefWidth="267.0" />
@@ -51,37 +51,53 @@
         </columnConstraints>
         <rowConstraints>
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="36.0" minHeight="10.0" prefHeight="32.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="25.0" minHeight="9.0" prefHeight="25.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="34.0" minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="36.0" minHeight="10.0" prefHeight="31.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1">
                <children>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Plat Nomor Kendaraan" />
                </children>
+               <GridPane.margin>
+                  <Insets top="10.0" />
+               </GridPane.margin>
             </HBox>
+            <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Jenis Kendaraan" wrappingWidth="183.205078125" />
+               </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+               <children>
+                  <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Button fx:id="btnJamMasukUmum" mnemonicParsing="false" onAction="#JamMasukUmumAction" prefHeight="31.0" prefWidth="113.0" text="Jam Masuk" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" />
+                     </children>
+                  </HBox>
+               </children></HBox>
+            <TextField fx:id="txtPlatUmum" alignment="CENTER" prefHeight="39.0" prefWidth="187.0" GridPane.columnIndex="2">
+               <GridPane.margin>
+                  <Insets top="10.0" />
+               </GridPane.margin></TextField>
+            <ComboBox fx:id="cmbxJenisKendaraanUmum" prefHeight="39.0" prefWidth="223.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <Button fx:id="btnJamKeluarUmum" mnemonicParsing="false" onAction="#JamKeluarUmumAction" prefHeight="23.0" prefWidth="110.0" text="Jam Keluar" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Voucher" textAlignment="CENTER" wrappingWidth="237.205078125" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <ComboBox fx:id="cmbxVoucher" prefHeight="39.0" prefWidth="223.0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
             <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Jenis Kendaraan" wrappingWidth="178.205078125" />
+                  <Label fx:id="lblGate" prefHeight="35.0" prefWidth="182.0" text="Gate" />
                </children>
             </HBox>
-            <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
-               <children>
-                  <Button fx:id="btnJamMasukUmum" mnemonicParsing="false" onAction="#JamMasukUmumAction" text="Jam Masuk" />
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" />
-               </children>
-            </HBox>
-            <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-            <TextField fx:id="txtPlatUmum" alignment="CENTER" prefHeight="39.0" prefWidth="187.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-            <ComboBox fx:id="cmbxJenisKendaraanUmum"  prefHeight="39.0" prefWidth="223.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-            <Button fx:id="btnJamKeluarUmum" mnemonicParsing="false" onAction="#JamKeluarUmumAction" text="Jam Keluar" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+            <TextField fx:id="txtGate" GridPane.columnIndex="2" GridPane.rowIndex="2" />
          </children>
       </GridPane>
       <TextArea fx:id="txtAKetUmum" prefHeight="31.0" prefWidth="600.0" style="-fx-font-alignment: center;">
          <VBox.margin>
-            <Insets left="10.0" right="10.0" />
+            <Insets left="10.0" right="10.0" top="20.0" />
          </VBox.margin>
       </TextArea>
       <TextArea fx:id="txtAKetBayarUmum" prefHeight="200.0" prefWidth="560.0" style="-fx-font-alignment: center;">

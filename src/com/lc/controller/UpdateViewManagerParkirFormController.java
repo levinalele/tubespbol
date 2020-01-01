@@ -32,6 +32,10 @@ public class UpdateViewManagerParkirFormController {
     private TableColumn colPlatDsn;
     @FXML
     private TableColumn colJenisKendaraanDsn;
+    @FXML
+    private Button btnDeleteDosen;
+    @FXML
+    private Button btnDeleteMahasiswa;
 
     @FXML
     private void UpdateMahasiswaAction(ActionEvent actionEvent) {
@@ -47,5 +51,13 @@ public class UpdateViewManagerParkirFormController {
 
     @FXML
     private void tableclickDosen(MouseEvent mouseEvent) {
+    }
+
+    @FXML
+    private void DeleteDosenAct(ActionEvent actionEvent) {
+    }
+
+    @FXML
+    private void DeleteMahasiswaAct(ActionEvent actionEvent) {
     }
 }

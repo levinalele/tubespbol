@@ -7,9 +7,9 @@ import javafx.scene.control.TextField;
 
 public class MainFormController {
     @FXML
-    private TextField txtIdLogin;
+    private TextField txtNik;
     @FXML
-    private TextField txtUsernameLogin;
+    private TextField txtPassword;
     @FXML
     private Button btnMasuk;
 

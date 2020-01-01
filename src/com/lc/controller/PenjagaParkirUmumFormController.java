@@ -2,10 +2,7 @@ package com.lc.controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 
 public class PenjagaParkirUmumFormController {
     @FXML
@@ -24,6 +21,12 @@ public class PenjagaParkirUmumFormController {
     private TextArea txtAKetBayarUmum;
     @FXML
     private Button btnPayUmum;
+    @FXML
+    private ComboBox cmbxVoucher;
+    @FXML
+    private Label lblGate;
+    @FXML
+    private ComboBox cmbxGate;
 
     @FXML
     private void MahasiswaDosenAction(ActionEvent actionEvent) {
@@ -39,5 +42,9 @@ public class PenjagaParkirUmumFormController {
 
     @FXML
     private void PayUmumAction(ActionEvent actionEvent) {
+    }
+
+    @FXML
+    private void gateAct(ActionEvent actionEvent) {
     }
 }

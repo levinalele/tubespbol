@@ -59,8 +59,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="FxmlFile" />
         <option value="CSS File" />
+        <option value="FxmlFile" />
         <option value="Class" />
       </list>
     </option>
@@ -86,7 +86,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="dynamic.classpath" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/com/lc/util" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="recentsLimit" value="5" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Java" />
@@ -196,7 +196,12 @@
       <updated>1359379246138</updated>
       <workItem from="1359379250712" duration="1302000" />
       <workItem from="1574226311304" duration="1628000" />
-      <workItem from="1574738970450" duration="3786000" />
+      <workItem from="1574738970450" duration="6010000" />
+      <workItem from="1574757755733" duration="1558000" />
+      <workItem from="1574773481528" duration="5630000" />
+      <workItem from="1575361239641" duration="233000" />
+      <workItem from="1575870269945" duration="1634000" />
+      <workItem from="1577873734428" duration="8216000" />
     </task>
     <servers />
   </component>

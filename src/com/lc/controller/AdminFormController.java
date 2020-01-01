@@ -25,6 +25,8 @@ public class AdminFormController {
     private TextField txtTahunTahunan;
     @FXML
     private Button btnTahunan;
+    @FXML
+    private Button btnAddUser;
 
     @FXML
     private void PenjagaParkirAction(ActionEvent actionEvent) {
@@ -44,5 +46,9 @@ public class AdminFormController {
 
     @FXML
     private void TahunanAction(ActionEvent actionEvent) {
+    }
+
+    @FXML
+    private void AddUserAct(ActionEvent actionEvent) {
     }
 }

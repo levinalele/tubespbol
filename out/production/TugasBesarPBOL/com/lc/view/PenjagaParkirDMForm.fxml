@@ -10,7 +10,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="776.0" prefWidth="600.0" style="-fx-background-color: yellow;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lc.controller.PenjagaParkirDMFormController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="776.0" prefWidth="600.0" styleClass="snowy" stylesheets="@../stylesheets.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lc.controller.PenjagaParkirDMFormController">
     <children>
         <Rectangle arcHeight="5.0" arcWidth="5.0" height="21.0" stroke="BLACK" strokeType="INSIDE" width="600.0">
             <fill>
@@ -29,7 +29,7 @@
         </Text>
         <HBox alignment="CENTER_RIGHT" prefHeight="60.0" prefWidth="580.0" spacing="10.0">
             <children>
-                <Button fx:id="btnUmum" mnemonicParsing="false" onAction="#UmumAction" prefHeight="60.0" prefWidth="182.0" text="Umum" />
+                <Button fx:id="btnUmum" mnemonicParsing="false" onAction="#UmumAction" prefHeight="60.0" prefWidth="182.0" stylesheets="@../stylesheets.css" text="Umum" />
             </children>
             <VBox.margin>
                 <Insets bottom="20.0" right="20.0" top="20.0" />
@@ -54,8 +54,9 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             </rowConstraints>
             <children>
                 <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
@@ -68,22 +69,27 @@
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Jenis Kendaraan" wrappingWidth="178.205078125" />
                     </children>
                 </HBox>
-                <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
                     <children>
                         <Button fx:id="btnJamMasukMD" mnemonicParsing="false" onAction="#JamMasukMDAction" text="Jam Masuk" />
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" />
                     </children>
                 </HBox>
-                <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                 <TextField fx:id="txtPlatMD" alignment="CENTER" prefHeight="39.0" prefWidth="187.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
                 <ComboBox fx:id="cmbxJenisKendaraanMD" onAction="#JenisKendaraanAction" prefHeight="39.0" prefWidth="223.0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-                <Button fx:id="btnJamKeluarMD" mnemonicParsing="false" onAction="#JamKeluarMDAction" text="Jam Keluar" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                <Button fx:id="btnJamKeluarMD" mnemonicParsing="false" onAction="#JamKeluarMDAction" text="Jam Keluar" GridPane.columnIndex="2" GridPane.rowIndex="5" />
             <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <children>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="NRP / NIK" wrappingWidth="179.205078125" />
                </children>
             </HBox>
             <TextField fx:id="txtNRPNIK" alignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+               <children>
+                  <Label fx:id="lblGate" prefHeight="27.0" prefWidth="176.0" text="Gate" />
+               </children>
+            </HBox>
+            <TextField fx:id="txtGate" GridPane.columnIndex="2" GridPane.rowIndex="4" />
             </children>
         </GridPane>
         <TextArea fx:id="txtAKetMD" prefHeight="31.0" prefWidth="600.0" style="-fx-font-alignment: center;">
