@@ -1,16 +1,22 @@
 package com.lc.controller;
 
+import com.lc.Main;
+import com.lc.dao.roleDaoImpl;
+import com.lc.entity.Role;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.TextField;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
+import javafx.scene.control.*;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.VBox;
+
+import java.io.IOException;
 
 public class AdminFormController {
-    @FXML
-    private Button btnPenjagaParkir;
-    @FXML
-    private Button btnManajemenParkir;
+    public MenuItem mnLogout;
     @FXML
     private DatePicker datepickerMingguan;
     @FXML
@@ -25,15 +31,33 @@ public class AdminFormController {
     private TextField txtTahunTahunan;
     @FXML
     private Button btnTahunan;
-    @FXML
-    private Button btnAddUser;
+    public roleDaoImpl roleDao;
+    public ObservableList<Role> roles;
+    public KelolaUserController kelolaUserController;
+    public KelolaRoleController kelolaRoleController;
+    Alert error = new Alert(Alert.AlertType.ERROR);
 
-    @FXML
-    private void PenjagaParkirAction(ActionEvent actionEvent) {
+    public void setKelolaRoleController(KelolaRoleController kelolaRoleController) {
+        this.kelolaRoleController = kelolaRoleController;
     }
 
-    @FXML
-    private void ManajemenParkirAction(ActionEvent actionEvent) {
+    public void setKelolaUserController(KelolaUserController kelolaUserController) {
+        this.kelolaUserController = kelolaUserController;
+    }
+
+    public roleDaoImpl getRoleDao() {
+        if(roleDao == null){
+            roleDao = new roleDaoImpl();
+        }
+        return roleDao;
+    }
+
+    public ObservableList<Role> getRoles() {
+        if(roles==null){
+            roles = FXCollections.observableArrayList();
+            roles.addAll(getRoleDao().showRolePetugas());
+        }
+        return roles;
     }
 
     @FXML
@@ -48,7 +72,29 @@ public class AdminFormController {
     private void TahunanAction(ActionEvent actionEvent) {
     }
 
-    @FXML
-    private void AddUserAct(ActionEvent actionEvent) {
+
+    public void mnLogoutAction(ActionEvent actionEvent) throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(Main.class.getResource("view/test.fxml"));
+        AnchorPane anchorPane = loader.load();
+        Main.getPrimaryStage().setScene(new Scene(anchorPane));
+    }
+
+    public void mnKelolaUserAction(ActionEvent actionEvent) throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(Main.class.getResource("view/KelolaUser.fxml"));
+        AnchorPane anchorPane = loader.load();
+        KelolaUserController controller = loader.getController();
+        controller.setAdminFormController(this);
+        Main.getPrimaryStage().setScene(new Scene(anchorPane));
+    }
+
+    public void mnKelolaRoleAction(ActionEvent actionEvent) throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(Main.class.getResource("view/KelolaRole.fxml"));
+        AnchorPane anchorPane = loader.load();
+        KelolaRoleController controller = loader.getController();
+        controller.setAdminFormController(this);
+        Main.getPrimaryStage().setScene(new Scene(anchorPane));
     }
 }

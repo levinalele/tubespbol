@@ -86,14 +86,21 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="dynamic.classpath" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/com/lc/view" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="recentsLimit" value="5" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Java" />
+    <property name="settings.editor.selected.configurable" value="preferences.JavaFX" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Win10\Desktop\TugasBesarPBOL\src\com\lc\view" />
       <recent name="C:\Users\angel\IdeaProjects\TugasBesarPBOL\src\com\lc\util" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.lc.entity" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\workspace\intellij\TugasBesarPBOL\src\com\lc" />
@@ -201,7 +208,13 @@
       <workItem from="1574773481528" duration="5630000" />
       <workItem from="1575361239641" duration="233000" />
       <workItem from="1575870269945" duration="1634000" />
-      <workItem from="1577873734428" duration="8216000" />
+      <workItem from="1577016862532" duration="3035000" />
+      <workItem from="1577099379861" duration="17985000" />
+      <workItem from="1577195145384" duration="31497000" />
+      <workItem from="1578385597623" duration="10400000" />
+      <workItem from="1578445106284" duration="60451000" />
+      <workItem from="1578639731522" duration="836000" />
+      <workItem from="1578644841630" duration="456000" />
     </task>
     <servers />
   </component>
@@ -211,5 +224,16 @@
   <component name="VcsManagerConfiguration">
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/lc/dao/jenisDaoImpl.java</url>
+          <line>85</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="761.0" prefWidth="600.0" style="-fx-background-color: yellow;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lc.controller.PenjagaParkirKeluarMDController">
+   <children>
+      <MenuBar>
+         <menus>
+            <Menu mnemonicParsing="false" text="File">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#mnHomeAction" text="Home" />
+                  <MenuItem mnemonicParsing="false" onAction="#mnLogoutAction" text="Log out" />
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="21.0" stroke="BLACK" strokeType="INSIDE" width="600.0">
+         <fill>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop color="BLACK" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </RadialGradient>
+         </fill>
+      </Rectangle>
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Penjaga Parkir" textAlignment="CENTER" wrappingWidth="602.205078125">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Text>
+      <HBox alignment="CENTER_RIGHT" prefHeight="85.0" prefWidth="580.0" spacing="10.0">
+         <children>
+            <Label prefHeight="52.0" prefWidth="114.0" text=" POS :">
+               <font>
+                  <Font name="System Bold" size="26.0" />
+               </font>
+            </Label>
+            <TextArea fx:id="txtPos" prefHeight="70.0" prefWidth="71.0">
+               <font>
+                  <Font name="System Bold" size="40.0" />
+               </font>
+            </TextArea>
+            <Label prefHeight="17.0" prefWidth="198.0" />
+            <Button fx:id="btnUmum" mnemonicParsing="false" onAction="#actionbtnUmum" prefHeight="59.0" prefWidth="157.0" text="Umum" />
+         </children>
+         <VBox.margin>
+            <Insets bottom="20.0" right="20.0" top="20.0" />
+         </VBox.margin>
+      </HBox>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#222425" height="1.0" stroke="BLACK" strokeType="INSIDE" width="600.0" />
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Mahasiswa/Dosen/Pegawai" textAlignment="CENTER" wrappingWidth="601.205078125">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#222425" height="1.0" stroke="BLACK" strokeType="INSIDE" width="600.0" />
+      <GridPane hgap="15.0" prefHeight="194.0" prefWidth="600.0" vgap="15.0">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="144.0" minWidth="10.0" prefWidth="28.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="267.0" minWidth="10.0" prefWidth="267.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="221.0" minWidth="10.0" prefWidth="221.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="127.0" minWidth="10.0" prefWidth="41.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="75.0" minHeight="10.0" prefHeight="75.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="49.0" minHeight="10.0" prefHeight="33.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Plat Nomor Kendaraan" textAlignment="CENTER" wrappingWidth="271.29296875" />
+               </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <children>
+                  <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" />
+                     </children>
+                  </HBox>
+               </children></HBox>
+            <TextField fx:id="txtPlatNomor" alignment="CENTER" prefHeight="39.0" prefWidth="187.0" GridPane.columnIndex="2" />
+            <Button fx:id="btnKeluar" mnemonicParsing="false" onAction="#actionbtnKeluar" prefHeight="23.0" prefWidth="110.0" text="Keluar" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Voucher" textAlignment="CENTER" wrappingWidth="237.205078125" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <ComboBox fx:id="cmbxVoucher" prefHeight="39.0" prefWidth="223.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+         </children>
+      </GridPane>
+      <TextArea prefHeight="31.0" prefWidth="600.0" style="-fx-font-alignment: center;">
+         <VBox.margin>
+            <Insets left="10.0" right="10.0" top="20.0" />
+         </VBox.margin>
+      </TextArea>
+      <TextArea fx:id="txtHarga" prefHeight="200.0" prefWidth="560.0" style="-fx-font-alignment: center;">
+         <VBox.margin>
+            <Insets left="10.0" right="10.0" />
+         </VBox.margin>
+      </TextArea>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <Button fx:id="btnBayar" mnemonicParsing="false" onAction="#actionbtnBayar" prefHeight="80.0" prefWidth="265.0" text="Pay" />
+         </children>
+      </HBox>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="19.0" stroke="BLACK" strokeType="INSIDE" width="601.0">
+         <fill>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop color="BLACK" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </RadialGradient>
+         </fill>
+      </Rectangle>
+   </children>
+</VBox>

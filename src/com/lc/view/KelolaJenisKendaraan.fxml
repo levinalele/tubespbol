@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lc.controller.KelolaJenisKendaraanController">
+    <children>
+        <VBox prefHeight="400.0" prefWidth="600.0">
+            <children>
+                <MenuBar>
+                    <menus>
+                        <Menu mnemonicParsing="false" text="File">
+                            <items>
+                                <MenuItem mnemonicParsing="false" onAction="#mnHomeAction" text="Home" />
+                                <MenuItem mnemonicParsing="false" onAction="#mnKelolaVoucherAction" text="Kelola Voucher" />
+                                <MenuItem mnemonicParsing="false" onAction="#mnLogoutAction" text="Log out" />
+                            </items>
+                        </Menu>
+                    </menus>
+                </MenuBar>
+                <GridPane>
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="295.0" minWidth="10.0" prefWidth="134.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="482.0" minWidth="10.0" prefWidth="466.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                    <children>
+                        <Label text="Jenis Kendaraan">
+                            <GridPane.margin>
+                                <Insets left="10.0" top="5.0" />
+                            </GridPane.margin>
+                        </Label>
+                        <TextField fx:id="txtJenisKendaraan" GridPane.columnIndex="1">
+                            <GridPane.margin>
+                                <Insets top="5.0" />
+                            </GridPane.margin>
+                        </TextField>
+                        <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                            <children>
+                                <Button fx:id="btnSave" mnemonicParsing="false" onAction="#btnSaveAction" text="Save" />
+                                <Button fx:id="btnReset" mnemonicParsing="false" onAction="#btnResetAction" text="Reset" />
+                                <Button fx:id="btnDelete" disable="true" mnemonicParsing="false" onAction="#btnDeleteAction" text="Delete" />
+                                <Button fx:id="btnUpdate" disable="true" mnemonicParsing="false" onAction="#btnUpdateAction" text="Update" />
+                            </children>
+                        </HBox>
+                  <Label text="Tarif" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <TextField fx:id="txtTarif" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                    </children>
+                </GridPane>
+                <TableView fx:id="tableJenisKendaraan" onMouseClicked="#tableRoleClicked" prefHeight="280.0" prefWidth="600.0" VBox.vgrow="ALWAYS">
+                    <columns>
+                        <TableColumn fx:id="colID" prefWidth="75.0" text="ID" />
+                        <TableColumn fx:id="colJenisKendaraan" prefWidth="75.0" text="Jenis Kendaraan" />
+                        <TableColumn fx:id="colTarif" prefWidth="75.0" text="Tarif" />
+                    </columns>
+                    <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                    </columnResizePolicy>
+                </TableView>
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>

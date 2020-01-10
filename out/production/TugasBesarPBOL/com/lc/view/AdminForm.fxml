@@ -1,160 +1,144 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.paint.*?>
-<?import javafx.scene.shape.*?>
-<?import javafx.geometry.*?>
-<?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
+<?import javafx.geometry.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="673.0" prefWidth="600.0" style="-: ;" styleClass="snowy" stylesheets="@../stylesheets.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lc.controller.AdminFormController">
-    <children>
-        <Rectangle arcHeight="5.0" arcWidth="5.0" stroke="BLACK" strokeType="INSIDE" width="600.0">
-            <fill>
-                <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
-                    <stops>
-                        <Stop color="BLACK" />
-                        <Stop color="WHITE" offset="1.0" />
-                    </stops>
-                </RadialGradient>
-            </fill>
-        </Rectangle>
-        <Rectangle arcHeight="5.0" arcWidth="5.0" height="19.0" stroke="BLACK" strokeType="INSIDE" width="601.0">
-            <fill>
-                <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
-                    <stops>
-                        <Stop color="BLACK" />
-                        <Stop color="WHITE" offset="1.0" />
-                    </stops>
-                </RadialGradient>
-            </fill>
-        </Rectangle>
-        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Admin Parkir" textAlignment="CENTER" wrappingWidth="602.205078125">
-            <font>
-                <Font size="36.0" />
-            </font>
-        </Text>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#222425" height="1.0" stroke="BLACK" strokeType="INSIDE" width="600.0" />
-      <HBox alignment="CENTER" prefHeight="129.0" prefWidth="600.0" spacing="30.0">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="673.0" prefWidth="600.0" style="-fx-background-color: yellow;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lc.controller.AdminFormController">
+  <children>
+      <MenuBar>
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+                  <MenuItem fx:id="mnKelolaUser" mnemonicParsing="false" onAction="#mnKelolaUserAction" text="Kelola User" />
+                  <MenuItem fx:id="mnKelolaRole" mnemonicParsing="false" onAction="#mnKelolaRoleAction" text="Kelola Role" />
+              <MenuItem fx:id="mnLogout" mnemonicParsing="false" onAction="#mnLogoutAction" text="Log Out" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+    <HBox alignment="CENTER" prefHeight="129.0" prefWidth="600.0" spacing="30.0">
          <children>
-            <Button fx:id="btnPenjagaParkir" mnemonicParsing="false" onAction="#PenjagaParkirAction" prefHeight="45.0" prefWidth="157.0" text="Penjaga Parkir" />
-            <Button fx:id="btnManajemenParkir" mnemonicParsing="false" onAction="#ManajemenParkirAction" prefHeight="42.0" prefWidth="174.0" text="Manajemen Parkir" />
-            <Button fx:id="btnAddUser" mnemonicParsing="false" onAction="#AddUserAct" prefHeight="39.0" prefWidth="152.0" text="Add User" />
-         </children>
-      </HBox>
-        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#222425" height="1.0" stroke="BLACK" strokeType="INSIDE" width="600.0" />
-        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Report" textAlignment="CENTER" wrappingWidth="601.205078125">
+          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Admin Parkir" textAlignment="CENTER" wrappingWidth="602.205078125">
             <font>
-                <Font name="System Bold" size="36.0" />
+              <Font size="36.0" />
             </font>
-        </Text>
-        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#222425" height="1.0" stroke="BLACK" strokeType="INSIDE" width="600.0" />
-      <VBox prefHeight="545.0" prefWidth="600.0">
-         <children>
-            <HBox alignment="CENTER" prefHeight="42.0" prefWidth="600.0">
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Report Mingguan" textAlignment="CENTER" wrappingWidth="176.205078125">
-                     <font>
-                        <Font name="System Bold" size="18.0" />
-                     </font>
-                  </Text>
-               </children>
-            </HBox>
-            <HBox alignment="CENTER" prefHeight="37.0" prefWidth="600.0">
-               <children>
-                  <DatePicker fx:id="datepickerMingguan" />
-               </children>
-            </HBox>
-            <HBox alignment="CENTER" prefHeight="65.0" prefWidth="600.0">
-               <children>
-                  <Button fx:id="btnMingguan" mnemonicParsing="false" onAction="#MingguanAction" prefHeight="45.0" prefWidth="216.0" text="Lihat Report Mingguan" />
-               </children>
-            </HBox>
-            <HBox alignment="CENTER" prefHeight="45.0" prefWidth="600.0">
-               <children>
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#222425" height="1.0" stroke="BLACK" strokeType="INSIDE" width="600.0" />
-               </children>
-            </HBox>
-            <HBox alignment="CENTER" prefHeight="26.0" prefWidth="600.0">
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Report Bulanan" textAlignment="CENTER" wrappingWidth="221.205078125">
-                     <font>
-                        <Font name="System Bold" size="18.0" />
-                     </font>
-                  </Text>
-               </children>
-            </HBox>
-            <HBox alignment="CENTER" prefHeight="44.0" prefWidth="600.0" spacing="10.0">
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Bulan" wrappingWidth="65.208984375">
-                     <HBox.margin>
-                        <Insets top="10.0" />
-                     </HBox.margin>
-                  </Text>
-                  <TextField fx:id="txtBulanBulanan" prefHeight="39.0" prefWidth="186.0">
-                     <HBox.margin>
-                        <Insets top="10.0" />
-                     </HBox.margin>
-                  </TextField>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Tahun" wrappingWidth="65.1484375">
-                     <HBox.margin>
-                        <Insets top="10.0" />
-                     </HBox.margin>
-                  </Text>
-                  <TextField fx:id="txtTahunBulanan" prefHeight="39.0" prefWidth="181.0">
-                     <HBox.margin>
-                        <Insets top="10.0" />
-                     </HBox.margin>
-                  </TextField>
-               </children>
-            </HBox>
-            <HBox alignment="CENTER" prefHeight="81.0" prefWidth="600.0">
-               <children>
-                  <Button fx:id="btnBulanan" mnemonicParsing="false" onAction="#BulananAction" prefHeight="45.0" prefWidth="216.0" text="Lihat Report Bulanan" />
-               </children>
-            </HBox>
-            <HBox>
-               <children>
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#222425" height="1.0" stroke="BLACK" strokeType="INSIDE" width="600.0" />
-               </children>
-            </HBox>
-            <HBox alignment="CENTER" prefHeight="46.0" prefWidth="600.0">
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Report Tahunan">
-                     <font>
-                        <Font name="System Bold" size="18.0" />
-                     </font>
-                  </Text>
-               </children>
-            </HBox>
-            <HBox alignment="CENTER" prefHeight="49.0" prefWidth="600.0" spacing="30.0">
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Tahun" />
-                  <TextField fx:id="txtTahunTahunan" prefHeight="39.0" prefWidth="170.0" />
-               </children>
-            </HBox>
-            <HBox alignment="CENTER" prefHeight="75.0" prefWidth="600.0">
-               <children>
-                  <Button fx:id="btnTahunan" mnemonicParsing="false" onAction="#TahunanAction" prefHeight="45.0" prefWidth="216.0" text="Lihat Report Tahunan" />
-               </children>
-            </HBox>
+          </Text>
          </children>
-         <VBox.margin>
-            <Insets />
-         </VBox.margin>
-      </VBox>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" height="19.0" stroke="BLACK" strokeType="INSIDE" width="601.0">
-         <fill>
-            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
-               <stops>
-                  <Stop color="BLACK" />
-                  <Stop color="WHITE" offset="1.0" />
-               </stops>
-            </RadialGradient>
-         </fill>
-      </Rectangle>
-    </children>
+    </HBox>
+    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="$x1" height="1.0" stroke="BLACK" strokeType="INSIDE" width="600.0" />
+    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Report" textAlignment="CENTER" wrappingWidth="601.205078125">
+      <font>
+        <Font name="System Bold" size="36.0" />
+      </font>
+    </Text>
+    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="$x1" height="1.0" stroke="BLACK" strokeType="INSIDE" width="600.0" />
+    <VBox prefHeight="545.0" prefWidth="600.0">
+      <children>
+        <HBox alignment="CENTER" prefHeight="42.0" prefWidth="600.0">
+          <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Report Mingguan" textAlignment="CENTER" wrappingWidth="176.205078125">
+              <font>
+                <Font name="System Bold" size="18.0" fx:id="x2" />
+              </font>
+            </Text>
+          </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="37.0" prefWidth="600.0">
+          <children>
+            <DatePicker fx:id="datepickerMingguan" />
+          </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="65.0" prefWidth="600.0">
+          <children>
+            <Button fx:id="btnMingguan" mnemonicParsing="false" onAction="#MingguanAction" prefHeight="45.0" prefWidth="216.0" text="Lihat Report Mingguan" />
+          </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="45.0" prefWidth="600.0">
+          <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="$x1" height="1.0" stroke="BLACK" strokeType="INSIDE" width="600.0" />
+          </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="26.0" prefWidth="600.0">
+          <children>
+            <Text font="$x2" strokeType="OUTSIDE" strokeWidth="0.0" text="Report Bulanan" textAlignment="CENTER" wrappingWidth="221.205078125" />
+          </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="44.0" prefWidth="600.0" spacing="10.0">
+          <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Bulan" wrappingWidth="65.208984375">
+              <HBox.margin>
+                <Insets top="10.0" />
+              </HBox.margin>
+            </Text>
+            <TextField fx:id="txtBulanBulanan" prefHeight="39.0" prefWidth="186.0">
+              <HBox.margin>
+                <Insets top="10.0" />
+              </HBox.margin>
+            </TextField>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Tahun" wrappingWidth="65.1484375">
+              <HBox.margin>
+                <Insets top="10.0" />
+              </HBox.margin>
+            </Text>
+            <TextField fx:id="txtTahunBulanan" prefHeight="39.0" prefWidth="181.0">
+              <HBox.margin>
+                <Insets top="10.0" />
+              </HBox.margin>
+            </TextField>
+          </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="81.0" prefWidth="600.0">
+          <children>
+            <Button fx:id="btnBulanan" mnemonicParsing="false" onAction="#BulananAction" prefHeight="45.0" prefWidth="216.0" text="Lihat Report Bulanan" />
+          </children>
+        </HBox>
+        <HBox>
+          <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="$x1" height="1.0" stroke="BLACK" strokeType="INSIDE" width="600.0" />
+          </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="46.0" prefWidth="600.0">
+          <children>
+            <Text font="$x2" strokeType="OUTSIDE" strokeWidth="0.0" text="Report Tahunan" />
+          </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="49.0" prefWidth="600.0" spacing="30.0">
+          <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Tahun" />
+            <TextField fx:id="txtTahunTahunan" prefHeight="39.0" prefWidth="170.0" />
+          </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="75.0" prefWidth="600.0">
+          <children>
+            <Button fx:id="btnTahunan" mnemonicParsing="false" onAction="#TahunanAction" prefHeight="45.0" prefWidth="216.0" text="Lihat Report Tahunan" />
+          </children>
+        </HBox>
+      </children>
+      <VBox.margin>
+        <Insets />
+      </VBox.margin>
+    </VBox>
+    <Rectangle arcHeight="5.0" arcWidth="5.0" height="19.0" stroke="BLACK" strokeType="INSIDE" width="601.0">
+      <fill>
+        <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+          <stops>
+            <Stop />
+            <Stop color="WHITE" offset="1.0" />
+          </stops>
+        </RadialGradient>
+      </fill>
+    </Rectangle>
+  </children>
 </VBox>
