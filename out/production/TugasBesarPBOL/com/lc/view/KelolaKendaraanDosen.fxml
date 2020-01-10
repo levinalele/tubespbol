@@ -10,14 +10,14 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="886.0" prefWidth="1186.0" style="-fx-background-color: yellow;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lc.controller.KelolaKendaraanDosenController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="832.0" prefWidth="1186.0" style="-: ;" styleClass="snowy" stylesheets="@../stylesheets.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lc.controller.KelolaKendaraanDosenController">
     <children>
         <MenuBar>
             <menus>
                 <Menu mnemonicParsing="false" text="File">
                     <items>
-                        <MenuItem mnemonicParsing="false" onAction="#mnHomeAction" text="Home"/>
-                        <MenuItem mnemonicParsing="false" onAction="#mnLogoutAction" text="Log out"/>
+                        <MenuItem mnemonicParsing="false" onAction="#mnHomeAction" text="Home" />
+                        <MenuItem mnemonicParsing="false" onAction="#mnLogoutAction" text="Log out" />
                     </items>
                 </Menu>
             </menus>
@@ -85,9 +85,9 @@
             <Insets top="10.0" />
          </VBox.margin>
       </Rectangle>
-      <HBox prefHeight="271.0" prefWidth="1186.0" VBox.vgrow="ALWAYS">
+      <HBox prefHeight="295.0" prefWidth="1186.0" VBox.vgrow="ALWAYS">
          <children>
-            <VBox prefHeight="161.0" prefWidth="615.0" HBox.hgrow="ALWAYS">
+            <VBox prefHeight="18.0" prefWidth="1186.0" HBox.hgrow="ALWAYS">
                <children>
                   <HBox alignment="CENTER" prefHeight="45.0" prefWidth="613.0">
                      <children>
@@ -98,7 +98,7 @@
                         </Text>
                      </children>
                   </HBox>
-                  <TableView fx:id="tableDosen" prefHeight="338.0" prefWidth="613.0" tableMenuButtonVisible="true">
+                  <TableView fx:id="tableDosen" prefHeight="262.0" prefWidth="1186.0" tableMenuButtonVisible="true">
                      <columns>
                         <TableColumn fx:id="colNIK" prefWidth="75.0" text="NIK" />
                         <TableColumn fx:id="colPlatNomor" prefWidth="75.0" text="Plat Nomor" />
@@ -127,6 +127,5 @@
             </RadialGradient>
          </fill>
       </Rectangle>
-      <TextField />
     </children>
 </VBox>

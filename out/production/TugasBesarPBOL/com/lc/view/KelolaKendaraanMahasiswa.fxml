@@ -10,14 +10,14 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="886.0" prefWidth="1186.0" style="-fx-background-color: yellow;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lc.controller.KelolaKendaraanMahasiswaController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="886.0" prefWidth="1186.0" style="-fx-background-color: yellow;" styleClass="snowy" stylesheets="@../stylesheets.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lc.controller.KelolaKendaraanMahasiswaController">
     <children>
         <MenuBar>
             <menus>
                 <Menu mnemonicParsing="false" text="File">
                     <items>
-                        <MenuItem mnemonicParsing="false" onAction="#mnHomeAction" text="Home"/>
-                        <MenuItem mnemonicParsing="false" onAction="#mnLogoutAction" text="Log out"/>
+                        <MenuItem mnemonicParsing="false" onAction="#mnHomeAction" text="Home" />
+                        <MenuItem mnemonicParsing="false" onAction="#mnLogoutAction" text="Log out" />
                     </items>
                 </Menu>
             </menus>
@@ -41,12 +41,12 @@
         <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="898.205078125" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#171717" height="1.0" stroke="BLACK" strokeType="INSIDE" width="1187.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#171717" height="1.0" stroke="BLACK" strokeType="INSIDE" width="1187.0" />
-        <HBox alignment="CENTER" prefHeight="356.0" prefWidth="1186.0">
+        <HBox alignment="CENTER" prefHeight="263.0" prefWidth="1186.0">
             <VBox.margin>
                 <Insets />
             </VBox.margin>
          <children>
-            <GridPane prefHeight="351.0" prefWidth="404.0">
+            <GridPane prefHeight="250.0" prefWidth="404.0">
               <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -54,9 +54,9 @@
               <rowConstraints>
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints maxHeight="26.0" minHeight="10.0" prefHeight="21.0" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="41.0" minHeight="10.0" prefHeight="41.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="88.0" minHeight="10.0" prefHeight="38.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="87.0" minHeight="10.0" prefHeight="13.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="115.0" minHeight="10.0" prefHeight="115.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
                           <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Plat Nomor Kendaraan" textAlignment="CENTER" wrappingWidth="202.205078125" GridPane.rowIndex="1" />
@@ -77,6 +77,11 @@
             </GridPane>
          </children>
         </HBox>
+      <HBox alignment="TOP_RIGHT" prefHeight="31.0" prefWidth="1186.0">
+         <children>
+            <TextField fx:id="txtSearch" text="Search" />
+         </children>
+      </HBox>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#171717" height="1.0" stroke="BLACK" strokeType="INSIDE" width="1187.0">
          <VBox.margin>
             <Insets top="10.0" />
@@ -95,7 +100,7 @@
                         </Text>
                      </children>
                   </HBox>
-                  <TableView fx:id="tableMahasiswa" prefHeight="338.0" prefWidth="613.0" tableMenuButtonVisible="true">
+                  <TableView fx:id="tableMahasiswa" prefHeight="392.0" prefWidth="1186.0" tableMenuButtonVisible="true">
                      <columns>
                         <TableColumn fx:id="colNRP" prefWidth="75.0" text="NRP" />
                         <TableColumn fx:id="colPlatNomor" prefWidth="75.0" text="Plat Nomor" />

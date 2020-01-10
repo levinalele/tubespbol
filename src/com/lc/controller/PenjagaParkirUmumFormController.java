@@ -149,9 +149,9 @@ public class PenjagaParkirUmumFormController implements Initializable {
             kendaraan.setPlatnomor(txtPlatUmum.getText());
             kendaraan.setStatus("1");
             Integer idkendaraan = getKendaraanDao().getIdByPlatNomor(kendaraan);
-            Integer idjenis = getKendaraanDao().getJenisById(idkendaraan);
+            Integer idjenis = getJenisDao().getHargaById(cmbxJenisKendaraanUmum.getValue().getId());
             System.out.println("idkendaraan : " + idjenis);
-            Integer tarif = getJenisDao().getHargaById(idjenis);
+//            Integer tarif = getJenisDao().getHargaById(idjenis);
 
             Parkir parkir = new Parkir();
             parkir.setPlat_nomor_umum(txtPlatUmum.getText());
@@ -179,7 +179,7 @@ public class PenjagaParkirUmumFormController implements Initializable {
                     Integer totalhari = Math.toIntExact(totaljam % 24);
                     totaldenda = 15000*totalhari;
                 }
-                totalbayar = (tarif * Math.toIntExact(totaljam))+totaldenda;
+                totalbayar = (idjenis * Math.toIntExact(totaljam))+totaldenda;
                 parkir.setTotal_bayar(String.valueOf(totalbayar));
                 parkir.setStatus("1");
                 parkir.setJam_keluar(time);
@@ -192,7 +192,7 @@ public class PenjagaParkirUmumFormController implements Initializable {
                     parkir.setTotal_bayar("0");
 
                 } else {
-                    parkir.setTotal_bayar(String.valueOf(tarif));
+                    parkir.setTotal_bayar(String.valueOf(idjenis));
                 }
                 parkir.setStatus("1");
                 parkir.setJam_keluar(time);

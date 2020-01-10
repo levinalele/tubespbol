@@ -10,7 +10,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="686.0" prefWidth="900.0" style="-fx-background-color: yellow;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lc.controller.ManagerParkirFormController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="288.0" prefWidth="900.0" style="-fx-background-color: yellow;" styleClass="snowy" stylesheets="@../stylesheets.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lc.controller.ManagerParkirFormController">
    <children>
       <MenuBar>
          <menus>
@@ -40,9 +40,9 @@
          </font>
       </Text>
       <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="898.205078125" />
-      <HBox alignment="CENTER_RIGHT" prefHeight="292.0" prefWidth="870.0" spacing="35.0">
+      <HBox alignment="CENTER_RIGHT" prefHeight="112.0" prefWidth="870.0" spacing="35.0">
          <children>
-            <Button fx:id="btnAddStatusIjin" mnemonicParsing="false" onAction="#actionbtnAddStatusIjin" prefHeight="57.0" prefWidth="257.0" text="Add Status Ijin" />
+            <Button fx:id="btnAddStatusIjin" mnemonicParsing="false" onAction="#actionbtnAddStatusIjin" prefHeight="63.0" prefWidth="257.0" text="Add Status Ijin" />
             <Button fx:id="btnKendaraanMahasiswa" mnemonicParsing="false" onAction="#actionbtnKendaraanMahasiswa" prefHeight="57.0" prefWidth="242.0" text="Kendaraan Mahasiswa" />
             <Button fx:id="btnKendaraanDosen" mnemonicParsing="false" onAction="#actionbtnKendaraanDosen" prefHeight="57.0" prefWidth="242.0" text="Kendaraan Dosen/Pegawai" />
          </children>
@@ -53,13 +53,7 @@
             <Insets right="30.0" />
          </VBox.margin>
       </HBox>
-      <HBox prefHeight="553.0" prefWidth="850.0">
-         <VBox.margin>
-            <Insets />
-         </VBox.margin>
-      </HBox>
-      <HBox />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" height="19.0" stroke="BLACK" strokeType="INSIDE" width="903.0">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="26.0" stroke="BLACK" strokeType="INSIDE" width="903.0">
          <fill>
             <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
                <stops>

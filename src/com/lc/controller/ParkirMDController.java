@@ -90,6 +90,8 @@ public class ParkirMDController {
                 parkir.setTotal_bayar("0");
                 System.out.println(parkir.getTanggal()+"=jam: "+parkir.getJam_masuk()+"=plat : "+ parkir.getKendaraan_id().getPlatnomor()+"=idjeniskendaraan : "+ parkir.getKendaraan_id().getJenisKendaraan_id().getId()+"=iduser :"+ parkir.getKendaraan_id().getUser_id().getId() + "=idkendaraan : "+ parkir.getKendaraan_id().getId());
                 getParkirDao().addData(parkir);
+                txtNRPNIK.clear();
+                txtPlatNomor.clear();
             } else {
                 error.setContentText("plat nomor belum tercantum. mohon hubungi manager parkir !");
                 error.show();

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import javafx.geometry.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
@@ -7,9 +8,9 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lc.controller.KelolaUserController">
+<AnchorPane prefHeight="617.0" prefWidth="600.0" styleClass="snowy" stylesheets="@../stylesheets.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lc.controller.KelolaUserController">
    <children>
-      <VBox prefHeight="400.0" prefWidth="600.0">
+      <VBox prefHeight="617.0" prefWidth="600.0">
          <children>
             <MenuBar>
               <menus>
@@ -22,7 +23,16 @@
                 </Menu>
               </menus>
             </MenuBar>
-            <GridPane>
+            <HBox alignment="CENTER">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Kelola User">
+                     <font>
+                        <Font name="System Bold" size="28.0" />
+                     </font>
+                  </Text>
+               </children>
+            </HBox>
+            <GridPane prefHeight="258.0" prefWidth="600.0">
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="295.0" minWidth="10.0" prefWidth="134.0" />
                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="482.0" minWidth="10.0" prefWidth="466.0" />
@@ -52,12 +62,12 @@
                   </Label>
                   <TextField fx:id="txtNik" GridPane.columnIndex="1">
                      <GridPane.margin>
-                        <Insets top="5.0" />
+                        <Insets right="10.0" />
                      </GridPane.margin>
                   </TextField>
                   <TextField fx:id="txtNama" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <GridPane.margin>
-                        <Insets top="5.0" />
+                        <Insets right="10.0" />
                      </GridPane.margin>
                   </TextField>
                   <ComboBox fx:id="comboRole" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
@@ -77,8 +87,14 @@
                         <Button fx:id="btnUpdate" mnemonicParsing="false" onAction="#btnUpdateAction" text="Update" />
                         <Button fx:id="btnDelete" mnemonicParsing="false" onAction="#btnDeleteAction" text="Delete" />
                      </children>
+                     <GridPane.margin>
+                        <Insets right="10.0" />
+                     </GridPane.margin>
                   </HBox>
-                  <PasswordField fx:id="txtPassword" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <PasswordField fx:id="txtPassword" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <GridPane.margin>
+                        <Insets right="10.0" />
+                     </GridPane.margin></PasswordField>
                </children>
             </GridPane>
             <TableView fx:id="tableUser" onMouseClicked="#tableUserClicked" prefHeight="280.0" prefWidth="600.0">

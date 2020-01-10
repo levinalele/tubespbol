@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report1" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="1766ac80-1e4b-42ac-b656-1c86e1cb30ec">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="idparkir" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     jenis_kendaraan.`id` AS jenis_kendaraan_id,
+     jenis_kendaraan.`jenis` AS jenis_kendaraan_jenis,
+     jenis_kendaraan.`tarif` AS jenis_kendaraan_tarif,
+     kendaraan.`id` AS kendaraan_id,
+     kendaraan.`status` AS kendaraan_status,
+     kendaraan.`plat_nomor` AS kendaraan_plat_nomor,
+     kendaraan.`status_ijin` AS kendaraan_status_ijin,
+     kendaraan.`user_id` AS kendaraan_user_id,
+     kendaraan.`jenis_kendaraan_id` AS kendaraan_jenis_kendaraan_id,
+     parkir.`id` AS parkir_id,
+     parkir.`tanggal` AS parkir_tanggal,
+     parkir.`jam_masuk` AS parkir_jam_masuk,
+     parkir.`jam_keluar` AS parkir_jam_keluar,
+     parkir.`total_bayar` AS parkir_total_bayar,
+     parkir.`status` AS parkir_status,
+     parkir.`voucher_id` AS parkir_voucher_id,
+     parkir.`pos_id` AS parkir_pos_id,
+     parkir.`kendaraan_id` AS parkir_kendaraan_id,
+     parkir.`kendaraan_user_id` AS parkir_kendaraan_user_id,
+     parkir.`kendaraan_jenis_kendaraan_id` AS parkir_kendaraan_jenis_kendaraan_id,
+     parkir.`plat_nomor_umum` AS parkir_plat_nomor_umum,
+     parkir.`jenis_kendaraan_umum` AS parkir_jenis_kendaraan_umum,
+     pos.`id` AS pos_id,
+     pos.`nama` AS pos_nama,
+     role.`id` AS role_id,
+     role.`nama` AS role_nama,
+     user.`id` AS user_id,
+     user.`nik` AS user_nik,
+     user.`nama` AS user_nama,
+     user.`password` AS user_password,
+     user.`role_id` AS user_role_id,
+     voucher.`id` AS voucher_id,
+     voucher.`jenis` AS voucher_jenis
+FROM
+     `jenis_kendaraan` jenis_kendaraan INNER JOIN `kendaraan` kendaraan ON jenis_kendaraan.`id` = kendaraan.`jenis_kendaraan_id`
+     INNER JOIN `parkir` parkir ON kendaraan.`id` = parkir.`kendaraan_id`
+     AND kendaraan.`jenis_kendaraan_id` = parkir.`kendaraan_jenis_kendaraan_id`
+     AND kendaraan.`user_id` = parkir.`kendaraan_user_id`
+     INNER JOIN `user` user ON kendaraan.`user_id` = user.`id`
+     INNER JOIN `role` role ON user.`role_id` = role.`id`
+     INNER JOIN `pos` pos ON parkir.`pos_id` = pos.`id`
+     INNER JOIN `voucher` voucher ON parkir.`voucher_id` = voucher.`id`WHERE parkir.id=$P{idparkir}]]>
+	</queryString>
+	<field name="voucher_jenis" class="java.lang.String"/>
+	<field name="voucher_id" class="java.lang.Integer"/>
+	<field name="user_id" class="java.lang.Integer"/>
+	<field name="user_nik" class="java.lang.String"/>
+	<field name="user_nama" class="java.lang.String"/>
+	<field name="user_password" class="java.lang.String"/>
+	<field name="user_role_id" class="java.lang.Integer"/>
+	<field name="pos_id" class="java.lang.Integer"/>
+	<field name="pos_nama" class="java.lang.String"/>
+	<field name="parkir_id" class="java.lang.Integer"/>
+	<field name="parkir_tanggal" class="java.sql.Date"/>
+	<field name="parkir_jam_masuk" class="java.lang.String"/>
+	<field name="parkir_jam_keluar" class="java.lang.String"/>
+	<field name="parkir_total_bayar" class="java.lang.Double"/>
+	<field name="parkir_status" class="java.lang.Integer"/>
+	<field name="parkir_voucher_id" class="java.lang.Integer"/>
+	<field name="parkir_pos_id" class="java.lang.Integer"/>
+	<field name="parkir_kendaraan_id" class="java.lang.Integer"/>
+	<field name="parkir_kendaraan_user_id" class="java.lang.Integer"/>
+	<field name="parkir_kendaraan_jenis_kendaraan_id" class="java.lang.Integer"/>
+	<field name="parkir_plat_nomor_umum" class="java.lang.String"/>
+	<field name="parkir_jenis_kendaraan_umum" class="java.lang.String"/>
+	<field name="jenis_kendaraan_id" class="java.lang.Integer"/>
+	<field name="jenis_kendaraan_jenis" class="java.lang.String"/>
+	<field name="jenis_kendaraan_tarif" class="java.lang.Double"/>
+	<field name="kendaraan_id" class="java.lang.Integer"/>
+	<field name="kendaraan_status" class="java.lang.Integer"/>
+	<field name="kendaraan_plat_nomor" class="java.lang.String"/>
+	<field name="kendaraan_status_ijin" class="java.lang.Integer"/>
+	<field name="kendaraan_user_id" class="java.lang.Integer"/>
+	<field name="kendaraan_jenis_kendaraan_id" class="java.lang.Integer"/>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="189" y="39" width="195" height="40" uuid="77232666-91d9-4def-9292-36ef62365a4a"/>
+				<textElement textAlignment="Center">
+					<font size="20"/>
+				</textElement>
+				<text><![CDATA[Parking Area]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="34" splitType="Stretch">
+			<staticText>
+				<reportElement x="202" y="0" width="172" height="20" uuid="3fe152a5-15d0-4a09-90fc-ce5319a13dd6"/>
+				<textElement textAlignment="Center">
+					<font size="15"/>
+				</textElement>
+				<text><![CDATA[Struk Kendaraan Keluar]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<staticText>
+				<reportElement x="159" y="0" width="100" height="20" uuid="dade1a59-a3aa-4fbf-b0c3-aca3f0344cb6"/>
+				<text><![CDATA[PlatNomor]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="259" y="0" width="137" height="20" uuid="04b3c6f8-6c45-4881-8b59-0e73b4cfd881"/>
+				<textFieldExpression><![CDATA[$F{kendaraan_plat_nomor}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="159" y="20" width="100" height="20" uuid="e5be22a3-82de-4cf2-9929-b4ac26ba19ff"/>
+				<text><![CDATA[Pos]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="259" y="20" width="137" height="20" uuid="48cea425-1db1-4aae-9d78-0f24c21631c4"/>
+				<textFieldExpression><![CDATA[$F{pos_nama}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="159" y="40" width="100" height="20" uuid="1a6dab20-9edf-4e76-83be-03819907c9f7"/>
+				<text><![CDATA[Masuk]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="159" y="60" width="100" height="20" uuid="f654b1d6-e28a-4276-b173-c6f21175bd0f"/>
+				<text><![CDATA[Keluar]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="159" y="80" width="100" height="20" uuid="82ffdc21-dc52-4908-84f0-ccbf5884da41"/>
+				<text><![CDATA[Tarif]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="259" y="40" width="137" height="20" uuid="c64f04f5-e495-43d6-88ce-e92a00416801"/>
+				<textFieldExpression><![CDATA[$F{parkir_jam_masuk}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="259" y="60" width="137" height="20" uuid="de7035a4-40d0-410e-97ba-461e8e108601"/>
+				<textFieldExpression><![CDATA[$F{parkir_jam_keluar}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="259" y="80" width="137" height="20" uuid="d778e3e0-5046-4efa-820f-1576ad6f5ead"/>
+				<textFieldExpression><![CDATA[$F{parkir_total_bayar}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch">
+			<textField>
+				<reportElement x="455" y="0" width="100" height="20" uuid="bd767714-66cd-43f2-9374-e68aa67726b0"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+</jasperReport>

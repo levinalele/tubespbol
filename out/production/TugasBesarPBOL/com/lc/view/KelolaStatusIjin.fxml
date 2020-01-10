@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.geometry.*?>
 <?import java.lang.*?>
@@ -8,9 +10,9 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lc.controller.KelolaStatusIjinController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" styleClass="snowy" stylesheets="@../stylesheets.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lc.controller.KelolaStatusIjinController">
     <children>
-        <VBox layoutY="6.0" prefHeight="400.0" prefWidth="600.0">
+        <VBox layoutY="6.0" prefHeight="377.0" prefWidth="600.0">
             <children>
                 <MenuBar>
                     <menus>
@@ -28,7 +30,7 @@
                </font>
             </Label>
             <Label prefHeight="32.0" prefWidth="600.0" />
-                <GridPane alignment="CENTER">
+                <GridPane alignment="CENTER" prefHeight="209.0" prefWidth="600.0">
                     <columnConstraints>
                         <ColumnConstraints hgrow="SOMETIMES" maxWidth="295.0" minWidth="10.0" prefWidth="134.0" />
                         <ColumnConstraints hgrow="SOMETIMES" maxWidth="482.0" minWidth="10.0" prefWidth="466.0" />
@@ -47,12 +49,15 @@
                         </Label>
                         <TextField fx:id="txtPlatNomor" GridPane.columnIndex="1">
                             <GridPane.margin>
-                                <Insets top="5.0" />
+                                <Insets right="10.0" top="5.0" />
                             </GridPane.margin>
                         </TextField>
                         <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
                             <children>
-                                <Button fx:id="btnSave" mnemonicParsing="false" onAction="#btnSaveAction" text="Save" />
+                                <Button fx:id="btnSave" mnemonicParsing="false" onAction="#btnSaveAction" text="Save">
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin></Button>
                             </children>
                         </HBox>
                   <CheckBox fx:id="checkIjin" mnemonicParsing="false" text="Ijin Over Night" GridPane.columnIndex="1" GridPane.rowIndex="1" />
@@ -60,5 +65,15 @@
                 </GridPane>
             </children>
         </VBox>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#202122" height="19.0" layoutY="431.0" strokeLineCap="ROUND" strokeType="OUTSIDE" width="605.0">
+         <stroke>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.14556962025316456">
+               <stops>
+                  <Stop color="BLACK" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </RadialGradient>
+         </stroke>
+      </Rectangle>
     </children>
 </AnchorPane>

@@ -6,6 +6,7 @@ import com.lc.dao.kendaraanDaoImpl;
 import com.lc.dao.parkirDaoImpl;
 import com.lc.dao.voucherDaoImpl;
 import com.lc.entity.*;
+import com.lc.util.dbHelper;
 import com.sun.org.apache.xpath.internal.res.XPATHErrorResources_zh_TW;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -16,15 +17,21 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.view.JasperViewer;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.sql.Time;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.ResourceBundle;
 
 public class PenjagaParkirKeluarMDController implements Initializable {
@@ -43,6 +50,7 @@ public class PenjagaParkirKeluarMDController implements Initializable {
     public ObservableList<Voucher> vouchers;
     public voucherDaoImpl voucherDao;
     Alert error = new Alert(Alert.AlertType.ERROR);
+    public Integer idparkir;
 
     public voucherDaoImpl getVoucherDao() {
         if (voucherDao == null) {
@@ -87,7 +95,7 @@ public class PenjagaParkirKeluarMDController implements Initializable {
 
     public void actionbtnUmum(ActionEvent actionEvent) throws IOException {
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(Main.class.getResource("view/PenjagaParkirKeluarMD.fxml"));
+        loader.setLocation(Main.class.getResource("view/PenjagaParkirUmumForm.fxml"));
         VBox vBox = loader.load();
         PenjagaParkirUmumFormController controller = loader.getController();
         controller.setPenjagaParkirKeluarMDController(this);
@@ -113,7 +121,7 @@ public class PenjagaParkirKeluarMDController implements Initializable {
 
             Parkir parkir = new Parkir();
             parkir.setKendaraan_id(kendaraan);
-            Integer idparkir = getParkirDao().getIdByKendaraan(String.valueOf(idkendaraan));
+            idparkir = getParkirDao().getIdByKendaraan(String.valueOf(idkendaraan));
 
             String hehe = getParkirDao().getDateById(idparkir);
             LocalDate tglmasuk = LocalDate.parse(hehe);
@@ -166,6 +174,18 @@ public class PenjagaParkirKeluarMDController implements Initializable {
     }
 
     public void actionbtnBayar(ActionEvent actionEvent) {
+        try {
+            HashMap<String, Object> para = new HashMap<>();
+            para.put("idparkir",idparkir);
+            JasperPrint jp = JasperFillManager.fillReport("report/report1.jasper",para,dbHelper.createMySQLConnection());
+            JasperViewer viewer = new JasperViewer(jp,false);
+            viewer.setTitle("Struk Parkir");
+            viewer.setVisible(true);
+
+
+        } catch (JRException | ClassNotFoundException | SQLException e) {
+            e.printStackTrace();
+        }
         //print ke IReport
     }
 

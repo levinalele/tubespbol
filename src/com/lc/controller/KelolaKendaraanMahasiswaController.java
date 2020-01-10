@@ -8,6 +8,11 @@ import com.lc.entity.Role;
 import com.lc.entity.User;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.value.ObservableValue;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -18,7 +23,10 @@ import javafx.scene.layout.VBox;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Comparator;
+import java.util.Observable;
 import java.util.ResourceBundle;
+import java.util.function.Predicate;
 
 public class KelolaKendaraanMahasiswaController implements Initializable {
     public TextField txtNRP;
@@ -29,9 +37,11 @@ public class KelolaKendaraanMahasiswaController implements Initializable {
     public TableColumn<Kendaraan,String> colNRP;
     public TableColumn<Kendaraan,String> colPlatNomor;
     public TableColumn<Kendaraan,String> colJenisKendaraan;
+    final ObservableList<Kendaraan> data = FXCollections.observableArrayList();
     public ManagerParkirFormController managerParkirFormController;
     public KelolaUserController kelolaUserController;
     public userDaoImpl userDao;
+    public TextField txtSearch;
 
     Alert error = new Alert(Alert.AlertType.ERROR);
 

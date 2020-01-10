@@ -10,7 +10,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="425.0" prefWidth="600.0" style="-fx-background-color: yellow;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lc.controller.ParkirMDController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="425.0" prefWidth="600.0" style="-fx-background-color: ;" styleClass="snowy" stylesheets="@../stylesheets.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lc.controller.ParkirMDController">
     <children>
         <Rectangle arcHeight="5.0" arcWidth="5.0" height="21.0" stroke="BLACK" strokeType="INSIDE" width="600.0">
             <fill>
@@ -76,7 +76,7 @@
         </HBox>
       <Button fx:id="btnBack" mnemonicParsing="false" onAction="#actionbtnBack" text="Back">
          <VBox.margin>
-            <Insets />
+            <Insets left="10.0" />
          </VBox.margin>
       </Button>
         <Rectangle arcHeight="5.0" arcWidth="5.0" height="19.0" stroke="BLACK" strokeType="INSIDE" width="601.0">
